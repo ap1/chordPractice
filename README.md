@@ -49,6 +49,5 @@ Example Output (one chord)
 TODO
 ====
 * Add tunable time intervals
-* Build bigger chord database
 * Add difficulty information to chord database
 * Display multi-character fret numbers without erroneous chars (:,;, etc.)
