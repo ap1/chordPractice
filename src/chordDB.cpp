@@ -25,16 +25,18 @@ chordDB::chordDB(const string& dbFileName){
         continue;
     }
 
-    //printf("%s\n",line.c_str());
+    printf("%s\n",line.c_str());
 
     vector<string> tokens;
 
     vtokenize(line, ",", tokens);
 
-    if(tokens.size() != 2){
+    if(tokens.size() < 2){
       printf("error parsing db line \"%s\"\n",line.c_str());
       exit(1);
     }
+
+    addStartFret(tokens[1], tokens[2]);
 
     checkPattern(tokens[1]);
 
@@ -95,16 +97,26 @@ void chordDB::checkPattern(const string& p){
     for(int i=0; i<6; i++){
       switch(p[i]){
         case 'x':
-        case '0':
-        case '1':
-        case '2':
-        case '3':
-        case '4':
-        case '5':
-        case '6':
-        case '7':
-        case '8':
-        case '9':
+        case '0'+0:
+        case '0'+1:
+        case '0'+2:
+        case '0'+3:
+        case '0'+4:
+        case '0'+5:
+        case '0'+6:
+        case '0'+7:
+        case '0'+8:
+        case '0'+9:
+        case '0'+10:
+        case '0'+11:
+        case '0'+12:
+        case '0'+13:
+        case '0'+14:
+        case '0'+15:
+        case '0'+16:
+        case '0'+17:
+        case '0'+18:
+        case '0'+19:
           break;
         default:
           printf("Illegal character '%c' in \"%s\"\n",p[i],p.c_str());
@@ -120,7 +132,7 @@ void chordDB::checkPattern(const string& p){
 }
 
 
-int chordDB::getMinFret(string pat){
+int chordDB::getMinFret(string& pat){
   int minFret=1000;
   for(int i=0; i<6; i++){
     int fret = getFret(pat[i]);
@@ -131,7 +143,7 @@ int chordDB::getMinFret(string pat){
   return minFret;
 }
 
-int chordDB::getMaxFret(string pat){
+int chordDB::getMaxFret(string& pat){
   int maxFret=0;
   for(int i=0; i<6; i++){
     int fret = getFret(pat[i]);
@@ -144,20 +156,42 @@ int chordDB::getMaxFret(string pat){
 
 int chordDB::getFret(char c){
   switch(c){
-    case 'x': return -1;
-    case '0': return  0;
-    case '1': return  1;
-    case '2': return  2;
-    case '3': return  3;
-    case '4': return  4;
-    case '5': return  5;
-    case '6': return  6;
-    case '7': return  7;
-    case '8': return  8;
-    case '9': return  9;
+    case 'x':     return -1;
+    case '0'+0:   return  0;
+    case '0'+1:   return  1;
+    case '0'+2:   return  2;
+    case '0'+3:   return  3;
+    case '0'+4:   return  4;
+    case '0'+5:   return  5;
+    case '0'+6:   return  6;
+    case '0'+7:   return  7;
+    case '0'+8:   return  8;
+    case '0'+9:   return  9;
+    case '0'+10:  return  10;
+    case '0'+11:  return  11;
+    case '0'+12:  return  12;
+    case '0'+13:  return  13;
+    case '0'+14:  return  14;
+    case '0'+15:  return  15;
+    case '0'+16:  return  16;
+    case '0'+17:  return  17;
+    case '0'+18:  return  18;
+    case '0'+19:  return  19;
       break;
     default:
       printf("Illegal fret %c\n",c);
       exit(1);
   };
+}
+
+void chordDB::addStartFret(string& pat, string& fret){
+  int ifret = atol(fret.c_str());
+
+  if(ifret <= 1) return;
+
+  for(int i=0; i<6; i++){
+    if(pat[i] != 'x'){
+      pat[i] = pat[i] + (ifret - 1);
+    }
+  }
 }

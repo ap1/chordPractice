@@ -17,7 +17,7 @@ int error(const string& msg);
 
 int main(){
 
-  string filenameChordDB    = "chords.csv";
+  string filenameChordDB    = "chords2.csv";
   string filenameTestChords = "to_test.txt";
 
   chordDB db(filenameChordDB);

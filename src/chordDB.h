@@ -14,9 +14,10 @@ class chordDB {
 
   void checkPattern(const string& p);
 
-  int getMinFret(string pat);
-  int getMaxFret(string pat);
-  int getFret(char c);
+  void addStartFret(string& pat, string& fret);
+  int  getMinFret  (string& pat);
+  int  getMaxFret  (string& pat);
+  int  getFret     (char c);
 
 public:
   chordDB(const string& dbFileName);
