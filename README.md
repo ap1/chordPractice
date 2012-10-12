@@ -10,7 +10,7 @@ Input
 
 Two input files are required:
 
-_chords.csv_ contains a database of chords with pattern codes.
+* **chords.csv** contains a database of chords with pattern codes.
 
     name,pattern
     A,x02220
@@ -24,7 +24,7 @@ _chords.csv_ contains a database of chords with pattern codes.
     G,320003
     G7,320001
 
-_to\_test.txt_ contains the list of names of chords for practice. The program will
+* **to\_test.txt** contains the list of names of chords for practice. The program will
 only pick from these chords.
 
     Am,C,D,Em,G
