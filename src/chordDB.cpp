@@ -66,11 +66,11 @@ void chordDB::display(const string& chordname){
     maxFret = max(maxFret, minFret+5);
 
     // print string names
-    printf("  E A D G B E \n");
+    printf("     E A D G B E \n");
 
     for(int fret=minFret; fret <= maxFret; fret++){
-      if(fret>0) printf("%d", fret);
-      else       printf(" ");
+      if(fret>0) printf(" %d  ", fret);
+      else       printf("    ");
       for(int str=0; str<6; str++){
         if(getFret(pat[str]) == fret){
           if(fret==0) printf(" o");
@@ -81,7 +81,7 @@ void chordDB::display(const string& chordname){
         }
       }
       printf("\n");
-      if(fret==0) printf("  ----------- \n");
+      if(fret==0) printf("     ----------- \n");
     }
 
   }else{

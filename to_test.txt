@@ -1,2 +1,2 @@
-G,D,C,A,E,Em,Am,
+G,G7,D,Dm,D7,C,C7,A,Am,A7,E,Em,E7
 B,Bm,F
