@@ -1,1 +1,2 @@
-Am,C,D,Em,G
+G,D,C,A,E,Em,Am,
+B,Bm,F
