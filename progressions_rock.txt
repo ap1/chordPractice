@@ -1,0 +1,20 @@
+# from http://www.learn-to-play-rock-guitar.com/rock-guitar-chord.html
+D,A,G
+E,B,A
+E,A,D
+D,A,Bm,G
+Bm,G,D,A
+D,G,Bm,A
+Bm,A,D,G
+D,Bm,G,A
+G,D,C
+G,C,D
+
+# from http://EzineArticles.com/1525514
+A,Bm,E,A
+F#m,E,D,A
+F#m,E,D,E
+D,E,A,F#m
+Bm,A,E,E
+C#m,D,A,F#m
+E,D,A,Bm

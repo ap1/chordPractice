@@ -51,3 +51,4 @@ TODO
 * Add tunable time intervals
 * Add difficulty information to chord database
 * Display multi-character fret numbers without erroneous chars (:,;, etc.)
+* Add support for chord progressions instead of arbitrary selection
